@@ -1,7 +1,3 @@
-var FORM_LINKS = {
-  learnMore: "https://forms.gle/REPLACE_WITH_LEARN_MORE_PREFILLED_URL",
-  register: "https://forms.gle/REPLACE_WITH_REGISTER_PREFILLED_URL"
-};
 
 document.querySelectorAll("[data-cta]").forEach(function (button) {
   var key = button.getAttribute("data-cta");
@@ -11,5 +7,8 @@ document.querySelectorAll("[data-cta]").forEach(function (button) {
   button.setAttribute("rel", "noopener");
 });
 function trackClick(buttonName){
-  const formURL = 'https://docs.google.com/forms/d/e/1FAIpQLSecBdEbKUDM6RMPXcwj2wJFXDaWkdJoXtOPjwMA2vg04R3UEg/viewform?usp=publish-editor'
+  const formURL = 'https://docs.google.com/forms/d/e/1FAIpQLSecBdEbKUDM6RMPXcwj2wJFXDaWkdJoXtOPjwMA2vg04R3UEg/viewform?usp=publish-editor';
+  const formData = new formData();
+  formData.append('entry.215850049=yes', buttonName);
+  navigator.sendBeacon(formURL, formData);
 }
