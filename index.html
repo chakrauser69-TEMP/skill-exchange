@@ -6,6 +6,14 @@
   <title>Community Skill-Exchange — Trade Skills, Build Community</title>
   <meta name="description" content="A community skill-exchange platform with barter-based matching and reputation scoring. Teach what you know, learn what you need.">
   <link rel="stylesheet" href="styles.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BL55ZJDBFJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-BL55ZJDBFJ');
+  </script>
 </head>
 <body>
 
@@ -14,7 +22,7 @@
       <span class="brand-mark">CSE</span>
       <span class="brand-name">Community Skill-Exchange</span>
     </a>
-    <a class="btn btn-primary btn-sm" href="#register" data-cta="register">Register</a>
+    <a class="btn btn-primary btn-sm" href="#register" data-cta="register" data-cta-location="nav">Register</a>
   </header>
 
   <main id="top">
@@ -25,8 +33,8 @@
         <h1>Trade skills, not money.</h1>
         <p class="hero-tagline">A community skill-exchange platform with barter-based matching and reputation scoring. Teach what you know, learn what you need — without spending a dime.</p>
         <div class="hero-actions">
-          <a class="btn btn-secondary" href="#register" data-cta="learnMore"><button onlick="trackClick('Learn More')">Learn More</button></a>
-          <a class="btn btn-primary" href="#register" data-cta="register">Register Now</a>
+          <a class="btn btn-secondary" href="#register" data-cta="learnMore" data-cta-location="hero">Learn More</a>
+          <a class="btn btn-primary" href="#register" data-cta="register" data-cta-location="hero">Register Now</a>
         </div>
         <p class="hero-note">Ready in 2 minutes · Name, email &amp; what you offer</p>
       </div>
@@ -94,8 +102,8 @@
         <h2>Ready to join the exchange?</h2>
         <p>Register today and start trading skills with people who value what you know.</p>
         <div class="hero-actions">
-          <a class="btn btn-light btn-secondary" href="#register" data-cta="learnMore">Learn More</a>
-          <a class="btn btn-light btn-primary" href="#register" data-cta="register">Register Now</a>
+          <a class="btn btn-light btn-secondary" href="#register" data-cta="learnMore" data-cta-location="cta-band">Learn More</a>
+          <a class="btn btn-light btn-primary" href="#register" data-cta="register" data-cta-location="cta-band">Register Now</a>
         </div>
       </div>
     </section>

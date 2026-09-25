@@ -1,3 +1,7 @@
+var FORM_LINKS = {
+  learnMore: "https://forms.gle/REPLACE_WITH_YOUR_FORM_URL",
+  register: "https://forms.gle/REPLACE_WITH_YOUR_FORM_URL"
+};
 
 document.querySelectorAll("[data-cta]").forEach(function (button) {
   var key = button.getAttribute("data-cta");
@@ -6,9 +10,18 @@ document.querySelectorAll("[data-cta]").forEach(function (button) {
   button.setAttribute("target", "_blank");
   button.setAttribute("rel", "noopener");
 });
-function trackClick(buttonName){
-  const formURL = 'https://docs.google.com/forms/d/e/1FAIpQLSecBdEbKUDM6RMPXcwj2wJFXDaWkdJoXtOPjwMA2vg04R3UEg/viewform?usp=publish-editor';
-  const formData = new formData();
-  formData.append('https://docs.google.com/forms/d/e/1FAIpQLSecBdEbKUDM6RMPXcwj2wJFXDaWkdJoXtOPjwMA2vg04R3UEg/viewform?usp=pp_url&entry.215850049=yes', buttonName);
-  navigator.sendBeacon(formURL, formData);
+
+function trackCta(button) {
+  if (typeof window.gtag !== "function") return;
+  window.gtag("event", "cta_click", {
+    cta_name: button.getAttribute("data-cta"),
+    cta_location: button.getAttribute("data-cta-location") || "unknown"
+  });
 }
+
+document.addEventListener("click", function (event) {
+  var target = event.target;
+  if (!target || typeof target.closest !== "function") return;
+  var button = target.closest("[data-cta]");
+  if (button) trackCta(button);
+});
