@@ -1,6 +1,6 @@
 var FORM_LINKS = {
-  learnMore: "https://forms.gle/REPLACE_WITH_YOUR_FORM_URL",
-  register: "https://forms.gle/REPLACE_WITH_YOUR_FORM_URL"
+  learnMore: "https://docs.google.com/forms/d/e/1FAIpQLSecBdEbKUDM6RMPXcwj2wJFXDaWkdJoXtOPjwMA2vg04R3UEg/viewform?usp=dialog",
+  register: "https://docs.google.com/forms/d/e/1FAIpQLSeN-dGuAAx0fW0g36m8ne84qfd2NLuqeF-P-ZbBTLiOZC37Mw/viewform?usp=publish-editor"
 };
 
 document.querySelectorAll("[data-cta]").forEach(function (button) {
