@@ -366,6 +366,7 @@ body {
 }
 
 .card {
+  max-width: 300px;
   background: var(--surface);
   border: 1px solid var(--pink-100);
   border-radius: var(--radius);
